@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0o0mzbb" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.1.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <bpmn:process id="Process_0qdc9pk" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0sp9p0z</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0sp9p0z" sourceRef="StartEvent_1" targetRef="Activity_102bfvd" />
+    <bpmn:scriptTask id="Activity_102bfvd" name="A Script Task">
+      <bpmn:incoming>Flow_0sp9p0z</bpmn:incoming>
+      <bpmn:outgoing>Flow_1oq7kuv</bpmn:outgoing>
+    </bpmn:scriptTask>
+    <bpmn:scriptTask id="Activity_102bfgg" name="A Script Task">
+      <bpmn:incoming>Flow_0sp9p0z</bpmn:incoming>
+      <bpmn:outgoing>Flow_1oq7kuv</bpmn:outgoing>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_testp0z" sourceRef="StartEvent_1" targetRef="Activity_102bfvd" />
+    <bpmn:userTask id="Activity_0za2mys" name="A User Task">
+      <bpmn:incoming>Flow_1lv617d</bpmn:incoming>
+      <bpmn:outgoing>Flow_01raunh</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="Activity_015xbrs" name="A Service Task">
+      <bpmn:incoming>Flow_0f5r9p3</bpmn:incoming>
+      <bpmn:outgoing>Flow_0l6i3pw</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_01ii5xbrs" name="A Service Task">
+      <bpmn:incoming>Flow_0f5r9p3</bpmn:incoming>
+      <bpmn:outgoing>Flow_0l6i3pw</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_0yccqkd" name="An Exclusive Gateway">
+      <bpmn:incoming>Flow_1oq7kuv</bpmn:incoming>
+      <bpmn:outgoing>Flow_1lv617d</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0f5r9p3</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="Event_03v4c4g">
+      <bpmn:incoming>Flow_01raunh</bpmn:incoming>
+      <bpmn:incoming>Flow_0l6i3pw</bpmn:incoming>
+    </bpmn:endEvent>
+  </bpmn:process>
+</bpmn:definitions>
